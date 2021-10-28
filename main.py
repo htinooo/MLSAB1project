@@ -116,9 +116,9 @@ if dataset == "Advertising":
     if st.checkbox("Show model performance"):
         reg_score()
     if st.checkbox("Predict with customized data"):
-        tv = st.slider("TV", data.TV.min(), data.TV.max(), data.TV.mean())
-        radio = st.slider("Radio", data.radio.min(), data.radio.max(), data.radio.mean())
-        news = st.slider("Newspaper", data.newspaper.min(), data.newspaper.max(), data.newspaper.mean())
+        tv = st.slider("TV", 0, 300, 150)
+        radio = st.slider("Radio", 0, 50, 25)
+        news = st.slider("Newspaper", 0, 120, 60)
         if st.button("Proceed"):
             pred = model.predict([[tv,radio,news]])
             st.success("Predicted sales = " + str(round((pred[0]),2)))
@@ -207,12 +207,12 @@ if dataset == "Fish":
     if st.checkbox("Show Model Score"):
         class_score()
     if st.checkbox("Predict custom data"):
-        wt = st.slider("Weight", data.Weight.min(), data.Weight.max(), data.Weight.mean())
-        l1 = st.slider("Length1", data.Length1.min(), data.Length1.max(), data.Length1.mean())
-        l2 = st.slider("Length2", data.Length2.min(), data.Length2.max(), data.Length2.mean())
-        l3 = st.slider("Length3", data.Length3.min(), data.Length3.max(), data.Length3.mean())
-        h = st.slider("Height", data.Height.min(), data.Height.max(), data.Height.mean())
-        wd = st.slider("Width", data.Width.min(), data.Width.max(), data.Width.mean())
+        wt = st.slider("Weight", 0, 1650, 400)
+        l1 = st.slider("Length1", 7, 60, 30)
+        l2 = st.slider("Length2", 8, 64, 30)
+        l3 = st.slider("Length3", 9, 68, 30)
+        h = st.slider("Height", 1, 20, 9)
+        wd = st.slider("Width", 1, 8, 4)
         if st.button("Proceed"):
             pred = model.predict(np.array([(wt,l1,l2,l3,h,wd)]))
             if pred == 0:
