@@ -148,7 +148,7 @@ if dataset == "Health Insurance":
     if st.checkbox("Predict with customized data"):
         age = st.number_input("Age", data.age.min(), data.age.max(), step=1)
         sex0 = st.radio("Sex", ("Male","Female"))
-        bmi = st.slider("BMI", data.bmi.min(), data.bmi.max(), data.bmi.mean())
+        bmi = st.slider("BMI", 16, 53, 30)
         children = st.number_input("Childern", data.children.min(), data.children.max(), step=1)
         smoker0 = st.radio("Smoke", ("No","Yes"))
         region0 = st.radio("Region", ("Southeast","Northeast","Southwest","Northwest"))       
