@@ -229,4 +229,4 @@ if dataset == "Fish":
                 name = "Pike"
             if pred == 6:
                 name = "Smelt"
-            st.success("Predicted iris = " + name)
+            st.success("Predicted Species = " + name)
